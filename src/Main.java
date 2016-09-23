@@ -1,8 +1,7 @@
-/**
- * Created by DENIS on 05.09.2016.
- */
+import java.util.InputMismatchException;
+
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         try {
             System.out.println("Enter sizes of square matrix\n(number of string equals number of columns(matrix must be square): N = M)");
             int numOfStrings = Input.inputSizeN();
@@ -19,9 +18,10 @@ public class Main {
             mtr.swapMaximumAndCentralElements();
             System.out.println("Matrix after swap:");
             mtr.output();
-        }
-        catch(InvalidParameterException e){
+        } catch (InvalidParameterException e) {
             System.out.println(e.getMessage());
+        } catch (InputMismatchException e) {
+            System.out.println("Input/output error!");
         }
     }
 }
